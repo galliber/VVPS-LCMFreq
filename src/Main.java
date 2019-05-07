@@ -73,8 +73,8 @@ public class Main {
      * of the file and to a "filtered log" file, that is later
      * used to calculate the result.
      *
-     * @param event_module Map with file name and file ID
-     * @param input The input file with all of the events.
+     * @param event_module        Map with file name and file ID
+     * @param input               The input file with all of the events.
      * @param filteredLogFilePath The path of the file to save the filtered log in.
      * @return The file with the correct items.
      * @throws IOException ...
@@ -120,7 +120,7 @@ public class Main {
     /**
      * Prints top N(if there are enough) entries in the "pairs" list.
      *
-     * @param pairs The List of String pairs with file ID and view count.
+     * @param pairs        The List of String pairs with file ID and view count.
      * @param event_module Map with file name and file ID
      * @param resultsCount The number of items to be shown.
      */
@@ -142,7 +142,7 @@ public class Main {
      * Adds spaces to a String until it is the size of the
      * "width" parameter.
      *
-     * @param str String to be formated.
+     * @param str   String to be formated.
      * @param width Wanted size of string.
      * @return Reformed string.
      */

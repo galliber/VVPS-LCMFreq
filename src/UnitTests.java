@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UnitTests {
     @Test
-    public void test_GenerateFilteredLogFile_returnsCorrectString(){
+    public void test_GenerateFilteredLogFile_returnsCorrectString() {
         //Arrange
         String input1 = "text";
         String input2 = "texttexttext";
@@ -52,7 +52,7 @@ public class UnitTests {
         List<String[]> result = Main.getID_CountPairsFromResultFile(input);
         //Assert
         Assert.assertEquals(expectedResult.size(), result.size());
-        for(int i=0;i<result.size();i++){
+        for (int i = 0; i < result.size(); i++) {
             Assert.assertEquals(expectedResult.get(i)[0], result.get(i)[0]);
             Assert.assertEquals(expectedResult.get(i)[1], result.get(i)[1]);
         }
@@ -85,10 +85,10 @@ public class UnitTests {
         expectedResult.add(pair4);
         expectedResult.add(pair5);
         //Act
-        List<String[]> result=Main.sortID_CountPairs(input);
+        List<String[]> result = Main.sortID_CountPairs(input);
         //Assert
         Assert.assertEquals(expectedResult.size(), result.size());
-        for(int i=0;i<result.size();i++){
+        for (int i = 0; i < result.size(); i++) {
             Assert.assertEquals(expectedResult.get(i)[0], result.get(i)[0]);
             Assert.assertEquals(expectedResult.get(i)[1], result.get(i)[1]);
         }
@@ -101,12 +101,12 @@ public class UnitTests {
         String logFilePath = "TextFiles/testFiltered_log.txt";
         File input = new File("TextFiles/testInput.txt");
         String expectedResult = "708480810845104734";
-        StringBuilder result= new StringBuilder();
+        StringBuilder result = new StringBuilder();
         //Act
-        File filteredLog=Main.generateFilteredLogFile(event_module, input, logFilePath);
+        File filteredLog = Main.generateFilteredLogFile(event_module, input, logFilePath);
         String line;
-        BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(filteredLog)));
-        while((line=br.readLine())!=null){
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filteredLog)));
+        while ((line = br.readLine()) != null) {
             result.append(line);
         }
         //Assert
@@ -123,10 +123,10 @@ public class UnitTests {
 
         //Act
         File testResult = Main.executeAlgorithmAndGenerateResultFile(testLog);
-        StringBuilder result=new StringBuilder();
-        BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(testResult)));
+        StringBuilder result = new StringBuilder();
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(testResult)));
         String line;
-        while ((line=br.readLine())!=null){
+        while ((line = br.readLine()) != null) {
             result.append(line);
         }
         //Assert
