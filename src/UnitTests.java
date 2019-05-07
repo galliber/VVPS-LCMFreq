@@ -96,6 +96,7 @@ public class UnitTests {
 
     @Test
     public void test_generateFilteredLogFile() throws IOException {
+        //Arrange
         HashMap<String, String> event_module = new HashMap<>();
         String logFilePath = "TextFiles/testFiltered_log.txt";
         File input = new File("TextFiles/testInput.txt");
@@ -116,6 +117,7 @@ public class UnitTests {
 
     @Test
     public void test_executeAlgorithmAndGenerateResultFile() throws IOException {
+        //Arrange
         File testLog = new File("TextFiles/testFiltered_log2.txt");
         String expectedResult = "708 2734 11084 14808 15104 1";
 

@@ -14,7 +14,9 @@ public class Main {
         HashMap<String, String> event_module = new HashMap<>();
         File input = new File(Constants.INPUT_PATH);
 
-        File filteredLog = generateFilteredLogFile(event_module, input, Constants.FILTERED_LOG_PATH);
+        File filteredLog = generateFilteredLogFile(event_module,
+                input,
+                Constants.FILTERED_LOG_PATH);
         File result = executeAlgorithmAndGenerateResultFile(filteredLog);
 
         List<String[]> pairs = getID_CountPairsFromResultFile(result);
@@ -77,7 +79,9 @@ public class Main {
      * @return The file with the correct items.
      * @throws IOException ...
      */
-    static File generateFilteredLogFile(HashMap<String, String> event_module, File input, String filteredLogFilePath) throws IOException {
+    static File generateFilteredLogFile(HashMap<String, String> event_module,
+                                        File input,
+                                        String filteredLogFilePath) throws IOException {
         File filteredLog = new File(filteredLogFilePath);
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(new FileInputStream(input)));
         BufferedWriter filteredLogWriter = new BufferedWriter(new FileWriter(filteredLog));
@@ -120,7 +124,9 @@ public class Main {
      * @param event_module Map with file name and file ID
      * @param resultsCount The number of items to be shown.
      */
-    private static void printTopNResults(List<String[]> pairs, HashMap<String, String> event_module, int resultsCount) {
+    private static void printTopNResults(List<String[]> pairs,
+                                         HashMap<String, String> event_module,
+                                         int resultsCount) {
         System.out.println("Top 5 most viewed files:\n" +
                 "No    ID      Views    Name");
         int n = resultsCount > pairs.size() ? pairs.size() : resultsCount;
